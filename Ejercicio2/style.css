@@ -1,0 +1,25 @@
+*{
+    background-color: bisque;
+    margin: 0px;
+}
+.content{
+    margin-top: 30ch;
+    margin-bottom: 30ch;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+table, tr , th, td{
+    border: solid black 2px;
+}
+button{
+    border-radius: 15px;
+    padding: 10px;
+}
+button:hover{
+    background-color: black;
+    color: white;
+    border-color: white;
+    transition: 0.5s;
+}
