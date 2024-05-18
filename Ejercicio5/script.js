@@ -13,3 +13,12 @@ function toggleChartVisibility() {
         limpiarGrafico();
     }
 }
+function cargarDatos() {
+    return fetch('data.json').then(response => response.json());
+}
+
+function limpiarGrafico() {
+    const ctx = document.getElementById('myChart').getContext('2d');
+    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+}
+
