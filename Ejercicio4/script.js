@@ -14,3 +14,27 @@ function cargarDatos() {
         })
         .catch(error => console.error('Error al cargar los datos:', error));
 }
+function mostrarGrafico(fechas, valores) {
+    document.getElementById('chartContainer').style.display = 'block';
+
+    const ctx = document.getElementById('myChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: fechas,
+            datasets: [{
+                label: 'Valores para la Región de Arequipa',
+                data: valores,
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+}
