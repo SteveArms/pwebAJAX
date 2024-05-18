@@ -4,12 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listado de regiones</title>
-    <script src="script.js"></script>
+    <style>
+        *{
+            background-color: bisque;
+        }
+        table, th, td{
+            border: 1px solid black;
+        }
+        th, td{
+            padding: 5px;
+        }
+    </style>
 </head>
 <body>
     <h1>listado de Regiones</h1> <br>
-    <button type="button" onclick=""> Mostrar Lista </button><br>
+    <button type="button" onclick="loadTable()"> Mostrar Lista </button> 
+    <br>
     <!--Emplearemos una tabla para mostrar la lista de datos de las personas fallecidas por region mostrando su fecha-->
     <table id="demo"></table>
+    <script src="script.js"></script>
 </body>
 </html>
