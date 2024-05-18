@@ -1,4 +1,5 @@
 let chartVisible = false;
+let myChart;
 
 document.getElementById('toggleChartBtn').addEventListener('click', toggleChartVisibility);
 
@@ -17,10 +18,12 @@ function toggleChartVisibility() {
         }
 
         cargarDatos([region1, region2]).then(data => {
-            mostrarGraficos(data);
+            mostrarGrafico(data);
         });
     } else {
-        limpiarGraficos();
+        if (myChart) {
+            myChart.destroy();
+        }
     }
 }
 
@@ -29,40 +32,35 @@ function cargarDatos(regiones) {
                              .then(data => data.filter(region => regiones.includes(region.region)));
 }
 
-function mostrarGraficos(data) {
-    const chartIds = ['chart1', 'chart2'];
-    data.forEach((regionData, index) => {
-        const ctx = document.getElementById(chartIds[index]).getContext('2d');
-        if (ctx.chart) {
-            ctx.chart.destroy();  // Limpiar gráfico existente si lo hay
-        }
-        ctx.chart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: regionData.confirmed.map(entry => entry.date),
-                datasets: [{
-                    label: `Valores para ${regionData.region}`,
-                    data: regionData.confirmed.map(entry => parseInt(entry.value)),
-                    borderColor: '#' + Math.floor(Math.random() * 16777215).toString(16),
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    y: { beginAtZero: true }
+function mostrarGrafico(data) {
+    const ctx = document.getElementById('myChart').getContext('2d');
+
+    if (myChart) {
+        myChart.destroy();
+    }
+
+    const labels = data[0].confirmed.map(entry => entry.date);
+    const datasets = data.map((regionData, index) => ({
+        label: `Valores para ${regionData.region}`,
+        data: regionData.confirmed.map(entry => parseInt(entry.value)),
+        borderColor: '#' + Math.floor(Math.random() * 16777215).toString(16),
+        borderWidth: 1
+    }));
+
+    myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: datasets
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
                 }
             }
-        });
+        }
     });
 }
 
-function limpiarGraficos() {
-    const chartIds = ['chart1', 'chart2'];
-    chartIds.forEach(chartId => {
-        const chartCanvas = document.getElementById(chartId);
-        if (chartCanvas.chart) {
-            chartCanvas.chart.destroy();
-        }
-    });
-}
 
