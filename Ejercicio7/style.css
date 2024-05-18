@@ -1,0 +1,40 @@
+*{
+    background-color: aquamarine;
+    margin: 0px;
+}
+.contener{  
+    margin-top: 30ch;
+    margin-bottom: 30ch;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;  
+}
+h1{
+    margin-bottom: 50px;
+    font-weight: bold;
+}
+label{
+    font-size: 18px;
+    padding: 8px;
+}
+select, option{
+    margin: 8px;
+    font-size: 15px;
+    background-color: white;
+    padding: 5px;
+    font-weight: bold;
+}
+button{
+    border-radius: 15px;
+    padding: 15px;
+    font-size: 15px;
+    background-color: white ;
+    margin-bottom: 15px;
+}
+button:hover{
+    background-color: black;
+    color: white;
+    border-color: white;
+    transition: 0.5s;
+}
