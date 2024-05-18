@@ -10,6 +10,17 @@ function loadTable(){
     xhttp.open("GET" , "data.json", true);
     xhttp.send();
 }
+//Empleamos una funcion la cual retornara los datos respectivos de una tabla 
 function myFunction(xhttp){
-
+    var responseJSON = JSON.parse(xhttp.responseText);
+    var table = "<tr><th> Region </th><th> Fallecidos </th></tr>"
+    for(var i = 0; i < responseJSON.length; i++){
+        var regiones = responseJSON[i];
+        var region = regiones.region;
+        var dateRegion = regiones.confirmed;
+        for(var j = 0; j < dateRegion.length; j++){
+            var date = dateRegion[j].date;
+        }
+    }
+    document.getElementById("demo").innerHTML = table;
 }
