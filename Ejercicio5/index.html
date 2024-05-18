@@ -3,15 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gráficos Comparativos entre Regiones</title>
+    <title>Comparación de Regiones</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="script.js" defer></script>
+    <style>
+        .chart-container {
+            width: 50%;
+            display: inline-block;
+        }
+    </style>
 </head>
 <body>
-    <h1>Gráficos Comparativos entre Regiones</h1>
-    <label for="regionesInput">Ingrese las regiones que desea comparar (separadas por comas):</label>
-    <input type="text" id="regionesInput">
-    <button id="toggleChartBtn">Mostrar/Esconder Gráfico</button>
+    <h1>Comparación de Regiones</h1>
+    <label for="region1Input">Región 1:</label>
+    <input type="text" id="region1Input" placeholder="Ingrese la primera región">
+    <br>
+    <label for="region2Input">Región 2:</label>
+    <input type="text" id="region2Input" placeholder="Ingrese la segunda región">
+    <br>
+    <button id="toggleChartBtn">Mostrar/Ocultar Gráfico</button>
+    <div id="chartContainer" style="display: none;">
+        <div class="chart-container">
+            <canvas id="chart1"></canvas>
+        </div>
+        <div class="chart-container">
+            <canvas id="chart2"></canvas>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
 

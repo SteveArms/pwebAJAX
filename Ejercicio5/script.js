@@ -4,20 +4,19 @@ document.getElementById('toggleChartBtn').addEventListener('click', toggleChartV
 
 function toggleChartVisibility() {
     chartVisible = !chartVisible;
-    const chartCanvas = document.getElementById('myChart');
-    chartCanvas.style.display = chartVisible ? 'block' : 'none';
+    const chartContainer = document.getElementById('chartContainer');
+    chartContainer.style.display = chartVisible ? 'block' : 'none';
 
     if (chartVisible) {
-        const regionesInput = document.getElementById('regionesInput').value;
-        const regiones = regionesInput.split(',').map(region => region.trim());
-        
-        if (regiones.length !== 4) {
-            alert('Por favor, ingrese exactamente cuatro regiones separadas por comas.');
+        const region1 = document.getElementById('region1Input').value.trim();
+        const region2 = document.getElementById('region2Input').value.trim();
+
+        if (!region1 || !region2) {
+            alert('Por favor, ingrese ambas regiones.');
             return;
         }
 
-        cargarDatos(regiones).then(data => {
-            limpiarGraficos();
+        cargarDatos([region1, region2]).then(data => {
             mostrarGraficos(data);
         });
     } else {
@@ -31,17 +30,13 @@ function cargarDatos(regiones) {
 }
 
 function mostrarGraficos(data) {
+    const chartIds = ['chart1', 'chart2'];
     data.forEach((regionData, index) => {
-        const chartContainer = document.createElement('div');
-        chartContainer.classList.add('chart-container');
-        document.body.appendChild(chartContainer);
-
-        const chartCanvas = document.createElement('canvas');
-        chartCanvas.classList.add('chart-canvas');
-        chartContainer.appendChild(chartCanvas);
-
-        const ctx = chartCanvas.getContext('2d');
-        new Chart(ctx, {
+        const ctx = document.getElementById(chartIds[index]).getContext('2d');
+        if (ctx.chart) {
+            ctx.chart.destroy();  // Limpiar gráfico existente si lo hay
+        }
+        ctx.chart = new Chart(ctx, {
             type: 'line',
             data: {
                 labels: regionData.confirmed.map(entry => entry.date),
@@ -62,7 +57,12 @@ function mostrarGraficos(data) {
 }
 
 function limpiarGraficos() {
-    const chartContainers = document.querySelectorAll('.chart-container');
-    chartContainers.forEach(container => container.remove());
+    const chartIds = ['chart1', 'chart2'];
+    chartIds.forEach(chartId => {
+        const chartCanvas = document.getElementById(chartId);
+        if (chartCanvas.chart) {
+            chartCanvas.chart.destroy();
+        }
+    });
 }
 
