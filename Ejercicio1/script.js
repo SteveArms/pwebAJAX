@@ -18,7 +18,7 @@ function myFunction(xhttp){
         var regiones = responseJSON[i];
         var region = regiones.region;
         var dateRegion = regiones.confirmed;
-        table += "<tr><td>" + region + "</td></td>";
+        table += "<tr><td>" + region + "</td><td>";
         for(var j = 0; j < dateRegion.length; j++){
             var date = dateRegion[j].date ;
             table += date + "<br>";
