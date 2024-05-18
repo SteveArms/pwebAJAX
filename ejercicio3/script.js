@@ -1,3 +1,7 @@
+function mostrarLista() {
+    document.getElementById('topRegionsListContainer').style.display = 'block';
+    cargarDatos();
+}
 function cargarDatos() {
     fetch('data.json')
         .then(response => response.json())

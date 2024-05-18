@@ -4,13 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Top 10 Regiones por Suma Total</title>
+    <style>#topRegionsListContainer {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <h1>Top 10 Regiones por Suma Total</h1>
-    <button id="mostrarTop10"> Mostrar Top 10 Regiones</button>
-    <ul id="topList"></ul>
+    <button id="mostrarTop10" onclick="mostrarLista()">Mostrar Top 10 Regiones</button>
+    <div id="topRegionsListContainer">
+        <ul id="topList"></ul>
+    </div>
 
     <script src="script.js"></script>
 </body>
 </html>
-
