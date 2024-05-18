@@ -15,12 +15,14 @@ function mostrarTop10Regiones(data) {
     // Ordenar las regiones por su suma total en orden descendente
     const sortedRegions = Object.entries(regionSum).sort((a, b) => b[1] - a[1]);
 
-    // Mostrar las 10 regiones con la suma total más alta
-    const top10List = document.getElementById('topRegionsList');
+    const top10List = document.getElementById('topList'); 
+    top10List.innerHTML = ''; // Limpiar la lista antes de agregar los nuevos elementos
     sortedRegions.slice(0, 10).forEach(([region, total]) => {
         const listItem = document.createElement('li');
         listItem.textContent = `${region}: ${total}`;
         top10List.appendChild(listItem);
     });
 }
+
+document.addEventListener('DOMContentLoaded', cargarDatos);
 
