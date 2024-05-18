@@ -43,7 +43,7 @@ function mostrarGrafico(data) {
     const datasets = data.map((regionData, index) => ({
         label: `Valores para ${regionData.region}`,
         data: regionData.confirmed.map(entry => parseInt(entry.value)),
-        borderColor: '#' + Math.floor(Math.random() * 16777215).toString(16),
+        borderColor: index === 0 ? 'rgba(75, 192, 192, 1)' : 'rgba(192, 75, 75, 1)',
         borderWidth: 1
     }));
 
@@ -62,5 +62,4 @@ function mostrarGrafico(data) {
         }
     });
 }
-
 
