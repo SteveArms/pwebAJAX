@@ -20,7 +20,8 @@ function myFunction(xhttp){
         var dateRegion = regiones.confirmed;
         table += "<tr><td>" + region + "</td></td>";
         for(var j = 0; j < dateRegion.length; j++){
-            var date = dateRegion[j].date + "<br>" ;
+            var date = dateRegion[j].date ;
+            table += date + "<br>";
         }
         table += "</td></tr>";
     }
