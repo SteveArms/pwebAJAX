@@ -79,4 +79,23 @@ const server = http.createServer((req, res) => {
             res.end(JSON.stringify({ content: htmlContent })); // Enviar el contenido convertido
           }
         });
+    }
+    
+    function createMarkdownFile(res, filename, content) {
+        // Función para crear un nuevo archivo Markdown
+        if (!filename || !content) {
+          res.statusCode = 400; // Faltan datos en la petición
+          res.end('Bad Request');
+          return;
+        }
+        const filePath = path.join(MARKDOWN_DIR, filename);
+        fs.writeFile(filePath, content, err => {
+          if (err) {
+            res.statusCode = 500; // Error al escribir el archivo
+            res.end('Internal Server Error');
+          } else {
+            res.setHeader('Content-Type', 'application/json'); // Establecer el tipo de contenido como JSON
+            res.end(JSON.stringify({ message: 'File created successfully' })); // Enviar mensaje de éxito
+          }
+        });
       }
