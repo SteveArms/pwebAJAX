@@ -9,4 +9,8 @@ const MARKDOWN_DIR = path.join(__dirname, 'markdown'); // Directorio donde se al
 const server = http.createServer((req, res) => {
     const parsedUrl = url.parse(req.url, true); // Parsear la URL de la petición
     const pathname = parsedUrl.pathname; // Obtener la ruta de la URL
-  
+    if (pathname === '/' && req.method === 'GET') {
+        // Servir el archivo index.html en la ruta raíz
+        serveFile(res, path.join(__dirname, 'public', 'index.html'), 'text/html');
+      } else if (pathname.startsWith('/api/files') && req.method === 'GET') {
+        if (pathname === '/api/files') {
