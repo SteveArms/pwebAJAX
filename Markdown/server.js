@@ -125,5 +125,8 @@ const server = http.createServer((req, res) => {
           .replace(/!\[(.*?)\]\((.*?)\)/gim, "<img alt='$1' src='$2' />")
           .replace(/\[(.*?)\]\((.*?)\)/gim, "<a href='$2'>$1</a>")
           .replace(/\n$/gim, '<br />');
-      }
+    }
       
+    server.listen(PORT, () => {
+        console.log(`Server running at http://localhost:${PORT}/`); // Iniciar el servidor
+    });
