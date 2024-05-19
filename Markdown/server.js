@@ -12,5 +12,30 @@ const server = http.createServer((req, res) => {
     if (pathname === '/' && req.method === 'GET') {
         // Servir el archivo index.html en la ruta raíz
         serveFile(res, path.join(__dirname, 'public', 'index.html'), 'text/html');
-      } else if (pathname.startsWith('/api/files') && req.method === 'GET') {
+    } else if (pathname.startsWith('/api/files') && req.method === 'GET') {
         if (pathname === '/api/files') {
+            // Listar archivos Markdown
+            listMarkdownFiles(res);
+        } else {
+            // Obtener el contenido de un archivo Markdown específico
+            const filename = pathname.split('/').pop(); // Obtener el nombre del archivo desde la URL
+            readMarkdownFile(res, filename);
+        }
+    } else if (pathname === '/api/files' && req.method === 'POST') {
+        // Crear un nuevo archivo Markdown
+        let body = '';
+        req.on('data', chunk => {
+          body += chunk.toString(); // Recibir datos del cuerpo de la petición
+        });
+        req.on('end', () => {
+          const { filename, content } = JSON.parse(body); // Parsear el cuerpo de la petición como JSON
+          createMarkdownFile(res, filename, content);
+        });
+      } else if (pathname.startsWith('/public') && req.method === 'GET') {
+        // Servir archivos estáticos (CSS, JS)
+        serveStaticFile(res, pathname);
+      } else {
+        res.statusCode = 404; // Ruta no encontrada
+        res.end('Not Found');
+      }
+    });
