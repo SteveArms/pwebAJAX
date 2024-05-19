@@ -65,3 +65,18 @@ const server = http.createServer((req, res) => {
           }
         });
     }
+
+    function readMarkdownFile(res, filename) {
+        // Función para leer un archivo Markdown específico
+        const filePath = path.join(MARKDOWN_DIR, filename);
+        fs.readFile(filePath, 'utf8', (err, data) => {
+          if (err) {
+            res.statusCode = 500; // Error al leer el archivo
+            res.end('Internal Server Error');
+          } else {
+            res.setHeader('Content-Type', 'application/json'); // Establecer el tipo de contenido como JSON
+            const htmlContent = markdownToHTML(data); // Convertir el contenido Markdown a HTML
+            res.end(JSON.stringify({ content: htmlContent })); // Enviar el contenido convertido
+          }
+        });
+      }
