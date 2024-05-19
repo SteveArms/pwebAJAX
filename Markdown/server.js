@@ -39,3 +39,16 @@ const server = http.createServer((req, res) => {
         res.end('Not Found');
       }
     });
+
+    function serveFile(res, filePath, contentType) {
+        // Función para servir archivos
+        fs.readFile(filePath, (err, data) => {
+          if (err) {
+            res.statusCode = 500; // Error al leer el archivo
+            res.end('Internal Server Error');
+          } else {
+            res.setHeader('Content-Type', contentType); // Establecer el tipo de contenido
+            res.end(data); // Enviar el contenido del archivo
+          }
+        });
+      }
