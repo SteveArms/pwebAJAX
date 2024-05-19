@@ -37,10 +37,13 @@ document.addEventListener('DOMContentLoaded', () => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({ filename, content }) // Enviar los datos como JSON
-    })
+     })
       .then(response => response.json())
       .then(data => {
         alert(data.message); // Mostrar mensaje de éxito
         fetchFiles(); // Actualizar la lista de archivos
       });
-  });
+     });
+  
+  fetchFiles(); // Cargar la lista de archivos al cargar la página
+});
