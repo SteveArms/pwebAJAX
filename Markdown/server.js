@@ -51,4 +51,17 @@ const server = http.createServer((req, res) => {
             res.end(data); // Enviar el contenido del archivo
           }
         });
-      }
+    }
+
+    function listMarkdownFiles(res) {
+        // Función para listar archivos Markdown
+        fs.readdir(MARKDOWN_DIR, (err, files) => {
+          if (err) {
+            res.statusCode = 500; // Error al leer el directorio
+            res.end('Internal Server Error');
+          } else {
+            res.setHeader('Content-Type', 'application/json'); // Establecer el tipo de contenido como JSON
+            res.end(JSON.stringify(files.filter(file => file.endsWith('.md')))); // Filtrar y enviar solo los archivos .md
+          }
+        });
+    }
