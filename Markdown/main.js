@@ -20,3 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
           viewButton.addEventListener('click', () => {
             fetchFileContent(file); // Añadir evento para cargar el contenido del archivo
           });
+          li.appendChild(viewButton); // Añadir el botón al lado del nombre del archivo
+          fileList.appendChild(li);
+        });
+      });
+    }
