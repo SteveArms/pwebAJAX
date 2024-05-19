@@ -1,0 +1,355 @@
+\documentclass[10pt, a4paper]{article}
+\usepackage[left=25mm, right=25mm, top=35mm, bottom=30mm, headheight=35mm]{geometry}
+\usepackage{graphicx}
+%opening
+\title{Laboratorio 4 - AJAX}
+\author{Armando Steven Cuno Cahuari}
+\newcommand{\integrante}{\fontsize{13}{14}\selectfont Cahui Benegas Anthony Ronaldo \\ Cuno Cahuari Armando Steven \\  Llacho Delgado Samir Jaren}
+\newcommand{\curso}{ \fontsize{13}{14}\selectfont Programacion Web 2}
+\newcommand{\tema}{\fontsize{13}{14}\selectfont Laboratorio 4 - AJAX}
+\newcommand{\repositorio}{\fontsize{13}{14}\selectfont https://github.com/SteveArms/pwebAJAX.git}
+\newcommand{\profesor}{Carlo Jose Luis Corrales Delgado}
+
+\begin{document}
+\begin{titlepage}
+	\centering
+	\textbf{\fontsize{20}{19}\selectfont Universidad Nacional San Agustin de Arequipa} \\
+	\vspace{1em}
+	\textbf{\fontsize{15}{16}\selectfont Facultad de Ingenieria de Produccion y Servicios} \\ 
+	\vspace{1em}
+	\textbf{\fontsize{15}{16}\selectfont Escuela Profesional de Ingenieria de Sistemas} \\
+	\vspace{1cm}
+	\includegraphics[height=4.5cm]{logoSistemas.jpeg} \\
+	\vspace{1cm}
+	\textbf{\fontsize{13}{14}\selectfont Curso: } \\ \vspace{1em}
+	\curso \\ \vspace{1em}
+	\textbf{\fontsize{13}{14}\selectfont Profesor:} \\ \vspace{1em}
+	\profesor \\ \vspace{1em}
+	\textbf{\fontsize{13}{14}\selectfont Tema: } \\ \vspace{1em}
+	\tema \\ \vspace{1em}
+	\textbf{\fontsize{13}{14}\selectfont Integrantes: } \\ \vspace{1em}
+	\integrante \\ \vspace{1em}
+	\textbf{\fontsize{13}{14}\selectfont Repositorio:} \\ \vspace{1em}
+	\repositorio \\ \vspace{1em}
+	\textbf{\fontsize{20}{14}\selectfont 2024} \\ \vspace{5em}
+\end{titlepage}
+\section*{\centering Informe - AJAX}
+	\begin{flushleft}
+		En la tarea actual, se han asignado 8 ejercicios relacionados con AJAX, así como otro ejercicio centrado en Markdown. Estos se distribuirán entre los integrantes del equipo para que cada uno se enfoque en una parte específica. La idea es evidenciar la aplicación de diversas funciones y métodos relacionados con AJAX, así como la comprensión de la sintaxis y funcionalidades de Markdown. \\
+		Para comenzar la actividad, se inició creando un repositorio en GitHub donde se alojarán los archivos pertinentes, como los códigos HTML, CSS, JS, entre otros. Este repositorio servirá como un espacio centralizado para colaborar y compartir el trabajo realizado en los ejercicios de AJAX y Markdown. 
+	\end{flushleft}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[height=8cm]{imagen1.jpeg}
+		\caption{GitHub - Repositorio pwebAJAX}
+	\end{figure}
+	\begin{flushleft}
+		Para comprender mejor la programación necesaria para los ejercicios, primero probamos los ejemplos de AJAX de W3Schools en nuestro propio servidor. Utilizamos Python para abrir el servidor y ejecutar los ejemplos, lo que nos permitió experimentar con el código y entender su funcionamiento en un entorno práctico. \\
+		Para hacer prueba de los ejercicios de w3schools haremos prueba mediante el servidor por python.
+	\end{flushleft}
+	\subsection*{AJAX XMLHttp}
+	\begin{flushleft}
+		El objeto XMLHttpRequest se utiliza para intercambiar datos con el servidor sin necesidad de recargar la página.
+	\end{flushleft}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[height=3cm]{imagen2.jpeg}
+		\caption{Servidor Python - XMLHttp}
+	\end{figure}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[height=3cm]{imagen3.jpeg}
+		\caption{Pagina - XMLHttp}
+	\end{figure} 
+	\begin{figure}[h]
+		\centering
+		\includegraphics[height=3cm]{imagen4.jpeg}
+		\caption{Pagina - XMLHttp}
+	\end{figure}
+	\subsection*{AJAX Request}
+	\begin{flushleft}
+		Mediante el objeto XMLHttpRequest, enviamos una solicitud al servidor utilizando los métodos `open` y `send`, lo que permite una interacción dinámica sin necesidad de recargar la página.
+	\end{flushleft}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[height=3cm]{imagen5.jpeg}
+		\caption{Servidor Python - AJAX Request}
+	\end{figure}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[height=3cm]{imagen6.jpeg}
+		\caption{Pagina - AJAXRequest}
+	\end{figure} 
+	\begin{figure}[h]
+		\centering
+		\includegraphics[height=3cm]{imagen7.jpeg}
+		\caption{Pagina - AJAXRequest}
+	\end{figure}
+	\vspace*{18em}
+	\subsection*{AJAX Response}
+	\begin{flushleft}
+		El objeto XMLHttpRequest tiene un analizador XML incorporado. La propiedad `responseXML` devuelve la respuesta del servidor como un objeto XML DOM.
+	\end{flushleft}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[height=3cm]{imagen8.jpeg}
+		\caption{Servidor Python - AJAX Response}
+	\end{figure}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[height=3cm]{imagen9.jpeg}
+		\caption{Pagina - AJAXResponse}
+	\end{figure} 
+	\vspace*{19em}
+	\subsection*{AJAX XMLFile}
+	\begin{flushleft}
+		Cuando un usuario hace clic en el botón "Obtener información del CD", se ejecuta la función `loadDoc()`. Esta función crea un objeto. \\
+		XMLHttpRequest, define la función que se ejecutará cuando la respuesta del servidor esté lista y envía la solicitud al servidor.
+	\end{flushleft}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=8cm]{imagen10.jpeg}
+		\caption{Servidor Python - AJAX XMLFile}
+	\end{figure}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[height=7cm]{imagen11.jpeg}
+		\caption{Pagina - XMLFile}
+	\end{figure} 
+	\begin{flushleft}
+		Otros mas.
+	\end{flushleft} \vspace*{2em}
+\section*{8 Ejercicios AJAX / GOOGLE CHART}
+	\subsection*{1er Ejercicio: Listar todas las regiones}
+	\begin{flushleft}
+		El código implementa una función llamada `loadTable` que envía una solicitud HTTP para obtener datos de un archivo JSON y mostrarlos en una tabla. La función crea un objeto `XMLHttpRequest`, el cual ejecuta una función cuando la solicitud es exitosa, llamando a `myFunction()`. Esta solicitud "GET" asincrónica obtiene los datos del archivo JSON.\\
+		La función `myFunction` toma la respuesta JSON, la convierte en un objeto JavaScript mediante `JSON.parse`, y construye una tabla HTML con los datos obtenidos. Finalmente, inserta esta tabla en el elemento HTML con el ID "demo". 
+	\end{flushleft}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=12cm]{imagen12.jpeg}
+		\caption{Codigo AJAX - Ejercicio 1}
+	\end{figure}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=8cm]{imagen13.jpeg}
+		\caption{Servidor Python - Ejercicio 1}
+	\end{figure}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=8cm]{imagen14.jpeg}
+		\caption{Pagina en Servidor - Ejercicio 1}
+	\end{figure}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[height=14cm]{imagen15.jpeg}
+		\caption{Pagina en Servidor - Ejercicio 1}
+	\end{figure} 
+	 \vspace*{40em}
+	\subsection*{2do Ejercicio: Total de confirmas por regiones}
+	\begin{flushleft}
+		El siguiente código realiza una operación similar al ejercicio anterior, enviando una solicitud HTTP al servidor. Una vez que la solicitud es exitosa, se ejecuta la función `myFunction()`. Esta función abre una solicitud "GET" y devuelve una tabla que se inserta en el elemento HTML correspondiente. La tabla se genera fila por fila, agregando el nombre de la región y el número de confirmados.
+	\end{flushleft}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=12cm]{imagen16.jpeg}
+		\caption{Codigo AJAX - Ejercicio 2}
+	\end{figure}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=10cm]{imagen17.jpeg}
+		\caption{Servidor Python - Ejercicio 2}
+	\end{figure}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=10cm]{imagen18.jpeg}
+		\caption{Pagina en Servidor - Ejercicio 2}
+	\end{figure}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[height=14cm]{imagen19.jpeg}
+		\caption{Pagina en Servidor - Ejercicio 2}
+	\end{figure}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[height=6cm]{imagen20.jpeg}
+		\caption{Commits - Ejercicio 2}
+	\end{figure} 
+	\vspace*{25cm}
+	\subsection*{3er Ejercicio: 10 regiones con la mayor suma}
+	\begin{flushleft}
+		Para implementar la funcionalidad de mostrar la lista de las 10 regiones con mayor número de casos confirmados, primero tenemos una función `mostrarLista()` que cambia el estilo del contenedor para hacerlo visible. Además, esta función llama a `cargarDatos()`, que se encarga de solicitar los datos.\\
+		La función `cargarDatos()` realiza una solicitud usando `fetch`, convierte la respuesta en JSON y pasa los datos obtenidos a la función `mostrarTop10Regiones()`, capturando cualquier error que ocurra durante la solicitud. \\
+		La función `mostrarTop10Regiones()` inicia un objeto para almacenar el total de casos confirmados por región, luego recorre cada objeto 'region', calculando el total de casos confirmados por cada región sumando los valores del array `confirmed` y almacenando el total con una clave correspondiente a cada región. \\
+		Luego, ordena las regiones por el número de casos confirmados convirtiéndolo en un array de pares clave-valor y ordenándolo de manera descendente. Una vez hecho esto, usando el ID de la lista `topList`, se toman las primeras 10 regiones, creando un nuevo elemento `li` para cada una y agregando estos elementos al contenedor `topList`.
+	\end{flushleft}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=10cm]{imagen21.jpeg}
+		\caption{Codigo AJAX - Ejercicio 3}
+	\end{figure}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[height=14cm]{imagen22.jpeg}
+		\caption{Pagina en Servidor - Ejercicio 3}
+	\end{figure}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=9cm]{imagen23.jpeg}
+		\caption{Servidor - Ejercicio 3}
+	\end{figure}
+	\vspace*{8cm}
+	\subsection*{4to Ejercicio: Gráfico en el tiempo de los valores para la región de Arequipa} 
+	\begin{flushleft}
+	Implementaremos un botón que disparará un evento llamando a la función `cargarDatos()`, verificando si los datosse cargan correctamente. Se crea una constante para almacenar los datos correspondientes a "Arequipa"; si no se encuentran, se mostrará un mensaje de error. Una vez hecho esto, se extraen las fechas y los valores confirmados, almacenándolos en dos arrays separados. \\
+	Para visualizar los datos en la gráfica, utilizaremos la función `mostrarGrafico()`, que recibirá los arrays de fechas y valores necesarios. La función `cargarDatos()`, que se trabajó en el ejercicio anterior, realizará la solicitud `fetch`. La función `mostrarGrafico()` se encargará de crear y configurar el gráfico, incluyendo el conjunto de datos correspondientes.
+	\end{flushleft}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[height=14cm]{imagen24.jpeg}
+		\caption{Codigo AJAX - Ejercicio 4}
+	\end{figure}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=12cm]{imagen25.jpeg}
+		\caption{Pagina en Servidor - Ejercicio 4}
+	\end{figure}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=8cm]{imagen26.jpeg}
+		\caption{Servidor - Ejercicio 4}
+	\end{figure}
+	\vspace*{8cm}
+	\subsection*{5to Ejercicio: Gráficos comparativos entre regiones usando líneas} 
+	\begin{flushleft}
+		En este ejercicio se implementará la funcionalidad para mostrar y ocultar un gráfico comparativo. Para ello, utilizamos un botón que añade un evento mediante un clic, el cual llama a la función `toggleChartVisibility()`. Esta función se encarga de validar las entradas; si falta alguna, mostrará una alerta. Si las dos entradas son válidas, se llama a `cargarDatos()`, y luego se pasa la data a `mostrarGrafico()`. \\
+		La función `cargarDatos()` realiza una solicitud `fetch` para obtener los datos del archivo JSON y filtra los datos especificados en las regiones. La función `mostrarGrafico()` se encarga de gestionar el elemento del lienzo y verificar si existe un gráfico anterior. Además, prepara los datos extrayendo las fechas y los conjuntos de datos por cada región, creando un gráfico de línea.
+	\end{flushleft}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[height=14cm]{imagen27.jpeg}
+		\caption{Codigo AJAX - Ejercicio 5}
+	\end{figure}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=12cm]{imagen28.jpeg}
+		\caption{Pagina en Servidor - Ejercicio 5}
+	\end{figure}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=10cm]{imagen29.jpeg}
+		\caption{Servidor - Ejercicio 5}
+	\end{figure}
+	\vspace*{8cm}
+	\subsection*{6to Ejercicio: Gráfico comparativo del crecimiento en regiones excepto Lima y Callao} 
+	\begin{flushleft}
+		Este código tiene como objetivo cargar datos de un archivo JSON, filtrarlos excluyendo las regiones de Lima y Callao, y representarlos gráficamente. \\
+		La función `onloadGraphic()` se encarga de realizar una solicitud para obtener los datos del JSON y luego llama a la función `graficar()` pasando estos datos como argumento.\\	
+		La función `graficar(regiones)` tiene la responsabilidad de cargar la biblioteca Google Charts y llamar a `drawChart()` una vez que la biblioteca está cargada. En `drawChart()`, se preparan los datos para la visualización utilizando la función `google.visualization.arrayToDataTable()` y se configuran las columnas necesarias. Posteriormente, se crea una instancia de `BarChart` de Google Charts, la cual dibuja el gráfico en el elemento HTML con ID "grafico".	\\
+		La función `valoresTabla(regiones)` se encarga de preparar los datos necesarios para la visualización del gráfico, excluyendo las regiones de Lima y Callao. Calcula la suma de casos confirmados para cada región y almacena estos datos junto con el nombre de la región y un color aleatorio para su posterior visualización en la gráfica. \\	
+		En resumen, este código logra cargar datos desde un archivo JSON, filtrarlos y representarlos gráficamente, excluyendo las regiones de Lima y Callao, utilizando la biblioteca Google Charts.
+	\end{flushleft}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=10cm]{imagen30.jpeg}
+		\caption{Codigo AJAX - Ejercicio 6}
+	\end{figure}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=10cm]{imagen31.jpeg}
+		\caption{Pagina en Servidor - Ejercicio 6}
+	\end{figure}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=8cm]{imagen32.jpeg}
+		\caption{Servidor - Ejercicio 6}
+	\end{figure}
+		\vspace*{50cm}
+	\subsection*{7mo Ejercicio: Gráficos comparativos entre regiones elegidas por el usuario.} 
+	\begin{flushleft}
+		Este ejercicio sigue una lógica similar al anterior en términos de la solicitud de datos, pero en esta ocasión se llaman a tres funciones una vez que la solicitud es exitosa, pasando como argumentos los datos y regiones obtenidos. Dentro de cada función `graficar()`, se almacenan los datos correspondientes de las dos regiones seleccionadas, así como la suma de los casos confirmados para cada una. Estos dos valores se utilizan para generar gráficos que se dibujan en elementos HTML específicos.
+	\end{flushleft}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[height=12cm]{imagen33.jpeg}
+		\caption{Codigo AJAX - Ejercicio 7}
+	\end{figure}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[height=12cm]{imagen34.jpeg}
+		\caption{Codigo AJAX - Ejercicio 7}
+	\end{figure}
+	\vspace*{50cm}
+	\subsection*{8vo Ejercicio: Gráfico comparativo del crecimiento en regiones excepto Lima y Callao, mostrando el número de confirmados por cada día.} 
+	\begin{flushleft}
+		Este código permite alternar la visibilidad de un gráfico al hacer clic en un botón. Cuando se hace clic en el botón, la función `toggleChartVisibility()` alterna entre mostrar u ocultar el gráfico actualizando el estilo del contenedor del gráfico (`chartContainer`). Si el gráfico está visible, se cargan los datos desde un archivo JSON mediante la función `cargarDatos()` y luego se muestra el gráfico utilizando la función `mostrarGrafico()`. Si el gráfico está oculto, se destruye la instancia del gráfico Chart.js.\\	
+		La función `mostrarGrafico()` utiliza los datos recibidos como argumento para construir y mostrar un gráfico de líneas. Para cada conjunto de datos, se genera un color aleatorio utilizando la función `getRandomColor()`, y luego se crea una instancia de Chart.js con los datos y opciones necesarios para visualizar el gráfico.\\	
+		En resumen, este código proporciona una forma sencilla de mostrar u ocultar un gráfico interactivo al hacer clic en un botón, y utiliza la biblioteca Chart.js para generar y mostrar el gráfico con los datos proporcionados.	
+	\end{flushleft}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[height=12cm]{imagen35.jpeg}
+		\caption{Codigo AJAX - Ejercicio 8}
+	\end{figure}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[height=12cm]{imagen36.jpeg}
+		\caption{Pagina en Servidor - Ejercicio 8}
+	\end{figure}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=8cm]{imagen37.jpeg}
+		\caption{Servidor - Ejercicio 8}
+	\end{figure}
+	\vspace*{50cm}
+\section*{MarkDown}
+	\begin{flushleft}
+		En esta segunda parte de la actividad, desarrollaremos una aplicación web que permitirá navegar por archivos Markdown. Esta aplicación tendrá la capacidad de listar los archivos Markdown disponibles, visualizar el contenido de un archivo Markdown traducido a HTML y crear nuevos archivos, almacenándolos en un servidor.	
+	\end{flushleft}
+	\vspace*{4cm}
+	\begin{flushleft}
+		Para comenzar, necesitaremos configurar un servidor utilizando Node.js que brinde funcionalidades para interactuar con archivos Markdown. Para esto, inicialmente requeriremos los módulos 'http', 'fs', 'path' y 'url'. Estos módulos son esenciales para crear el servidor HTTP, interactuar con el sistema de archivos y manejar las rutas, respectivamente. \\
+		A continuación, definiremos un par de constantes importantes: 'PORT', que especificará el puerto en el cual el servidor estará a la escucha de las solicitudes, y 'MARKDOWNDIR', que indicará la ubicación donde se almacenarán los archivos Markdown. \\
+		Luego, procederemos a crear el servidor utilizando la función 'http.createServer()'. Esta función establecerá un servidor HTTP que ejecutará una función de callback cada vez que reciba una solicitud HTTP. \\
+		El manejo de estas solicitudes será diverso, principalmente para las solicitudes 'GET' a diferentes rutas. Estas solicitudes podrán listar los archivos Markdown disponibles, crear nuevos archivos Markdown y realizar otras operaciones relacionadas.\\
+		Además, se implementarán varias funciones de utilidad para manejar diferentes operaciones. Por ejemplo, 'serveFile()' servirá archivos al cliente, 'listMarkdownFiles()' listará los archivos disponibles en el directorio de Markdown, entre otras funciones esenciales para el funcionamiento del servidor.	
+	\end{flushleft}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=7cm]{imagen38.jpeg}
+		\caption{Server Node.JS}
+	\end{figure}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=7cm]{imagen39.jpeg}
+		\caption{Server Node.JS}
+	\end{figure}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=7cm]{imagen40.jpeg}
+		\caption{Server Node.JS}
+	\end{figure}
+	\vspace*{1.5cm}
+	\begin{flushleft}
+	Este script implementa la lógica del lado del cliente para interactuar con el servidor y realizar operaciones como obtener, mostrar y crear archivos Markdown. El evento 'DOMContentLoaded' se activará una vez que el documento HTML haya sido completamente cargado y analizado, asegurando que el script pueda ejecutarse de manera adecuada.\\
+	Se seleccionan varios elementos del DOM utilizando el método 'getElementById'. Estos elementos representan la interfaz de usuario, como 'fileList' y 'fileContent', que se encargan de mostrar y representar el contenido de los archivos.\\
+	La función 'fetchFiles()' utiliza la API fetch para realizar una solicitud 'GET' al servidor y obtener una lista de archivos Markdown disponibles. Una vez recibida la respuesta del servidor, los archivos se muestran en la interfaz de usuario.\\
+	El evento 'submit' se activa cuando se envía un formulario para crear un nuevo archivo Markdown. Se recopilan los datos del formulario, como el nombre del archivo y su contenido, y se envían al servidor a través de una solicitud 'POST'. Esto permite la creación de nuevos archivos en el servidor.
+	\end{flushleft}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=9cm]{imagen41.jpeg}
+		\caption{Script - Lado del cliente}
+	\end{figure}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=9cm]{imagen42.jpeg}
+		\caption{Estructura HTML}
+	\end{figure}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=9cm]{imagen43.jpeg}
+		\caption{Archivos Markdown}
+	\end{figure}
+	
+\end{document}
