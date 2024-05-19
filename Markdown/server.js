@@ -98,4 +98,17 @@ const server = http.createServer((req, res) => {
             res.end(JSON.stringify({ message: 'File created successfully' })); // Enviar mensaje de éxito
           }
         });
+    }
+
+    function serveStaticFile(res, pathname) {
+        // Función para servir archivos estáticos
+        const filePath = path.join(__dirname, pathname);
+        const ext = path.extname(filePath).substring(1); // Obtener la extensión del archivo
+        const mimeTypes = {
+          'html': 'text/html',
+          'js': 'application/javascript',
+          'css': 'text/css'
+        };
+        const contentType = mimeTypes[ext] || 'text/plain'; // Establecer el tipo de contenido según la extensión
+        serveFile(res, filePath, contentType); // Servir el archivo
       }
