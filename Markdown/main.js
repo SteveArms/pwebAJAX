@@ -14,3 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
         files.forEach(file => {
           const li = document.createElement('li');
           li.textContent = file;
+          // Crear botón para ver el contenido del archivo
+          const viewButton = document.createElement('button');
+          viewButton.textContent = 'Ver contenido';
+          viewButton.addEventListener('click', () => {
+            fetchFileContent(file); // Añadir evento para cargar el contenido del archivo
+          });
