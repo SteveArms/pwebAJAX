@@ -25,3 +25,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
     }
+    // Evento para crear un nuevo archivo Markdown
+  createFileForm.addEventListener('submit', (e) => {
+    e.preventDefault(); // Prevenir el envío del formulario por defecto
+    const filename = filenameInput.value;
+    const content = fileContentInput.value;
+
+    fetch('/api/files', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ filename, content }) // Enviar los datos como JSON
+    })
+      .then(response => response.json())
+      .then(data => {
+        alert(data.message); // Mostrar mensaje de éxito
+        fetchFiles(); // Actualizar la lista de archivos
+      });
+  });
